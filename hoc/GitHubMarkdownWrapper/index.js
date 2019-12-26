@@ -23,6 +23,7 @@ const GitHubMarkdownWrapper = ({ children }) => (
       }
       .markdown-body :global(h2) {
         border-bottom: 1px solid #eaecef;
+        font-size: 1.4em;
       }
       .markdown-body :global(h4) {
         font-size: 1.1em;
