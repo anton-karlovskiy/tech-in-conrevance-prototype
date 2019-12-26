@@ -10,9 +10,8 @@ description: `
 2.  Secondary File: kebab-case \`e.g. left-side-drawer.css (left-side-drawer.module.css)\`
 3.  Constants: UPPER SNAKE_CASE \`e.g. API_KEY\`
 `,
-codeSnippet: `
-\`\`\`
-import FOOTER_MENU_ITEMS from 'utils/links/footer-menu-items';
+codeSnippet: 
+`import FOOTER_MENU_ITEMS from 'utils/links/footer-menu-items';
 
 const Footer = () => {
   const classes = useStyles();
@@ -24,9 +23,7 @@ const Footer = () => {
       <FooterRight />
     </footer>
   );
-};
-\`\`\`
-`
+};`
 },
 ];
 

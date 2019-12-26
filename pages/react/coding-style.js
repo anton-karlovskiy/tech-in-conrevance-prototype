@@ -1,10 +1,10 @@
 
 import { Fragment } from 'react';
-import ReactMarkdown from 'react-markdown';
 
 import Head from '../../components/Head';
 import HeroSection from '../../hoc/HeroSection';
-import ReactMarkdownWithCode from '../../components/ReactMarkdownWithCode';
+import ReactMarkdownWithRenderers from '../../components/ReactMarkdownWithRenderers';
+import ReactCodeBlock from '../../components/ReactCodeBlock';
 import GitHubMarkdownWrapper from '../../hoc/GitHubMarkdownWrapper';
 import { codingStylePatterns } from '../../data/react/coding-style';
 import { pages } from '../../utils/links';
@@ -15,10 +15,10 @@ const CodingStyle = () => (
     <HeroSection>
       <GitHubMarkdownWrapper>
         {/* ray test touch < */}
-        { codingStylePatterns.map(codingStylePattern => (
+        { codingStylePatterns.map((codingStylePattern, index) => (
           <Fragment key={codingStylePattern.id}>
-            <ReactMarkdown source={codingStylePattern.description} />
-            <ReactMarkdownWithCode source={codingStylePattern.codeSnippet} />
+            <ReactMarkdownWithRenderers source={codingStylePattern.description} />
+            <ReactCodeBlock value={codingStylePattern.codeSnippet} />
           </Fragment>
         )) }
         {/* ray test touch > */}
