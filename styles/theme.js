@@ -24,12 +24,17 @@ const theme = {
     },
     text: {
       primary: '#fff',
-      secondary: 'rgb(214, 216, 218)'
+      secondary: 'rgb(214, 216, 218)',
+      dark: '#000'
     },
     background: {
       paper: '#fff',
       default: '#202124',
       header: '#212121'
+    },
+    highlight: {
+      primary: '#495f53',
+      secondary: '#5a5f3e'
     }
   },
   animation: {

@@ -1,6 +1,8 @@
 
 import React from 'react';
 
+import theme from '../../../styles/theme';
+
 const flatten = (text, child) => {
   return typeof child === 'string'
     ? text + child
@@ -21,7 +23,7 @@ const HeadingRenderer = props => {
   const slug = text.toLowerCase().replace(/\W/g, '-');
   const HeadingChildren = () => (
     <>
-      <GitHubAnchor slug={slug} color='#fff' />
+      <GitHubAnchor slug={slug} color={theme.palette.text.primary} />
       {props.children}
     </>
   );

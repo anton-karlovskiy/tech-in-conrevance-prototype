@@ -3,13 +3,13 @@
 const codingStylePatterns = [
 {
 id: 'folder-structure',
-description: `
-## Folder, File and Variable Text Decoration  
+description: number => (`
+## #${number} Folder, File and Variable Text Decoration  
 
 1.  Component: PascalCase \`e.g. LeftSideDrawer/index.js\`
 2.  Secondary File: kebab-case \`e.g. left-side-drawer.css (left-side-drawer.module.css)\`
 3.  Constants: UPPER SNAKE_CASE \`e.g. API_KEY\`
-`,
+`),
 codeSnippet: 
 `import FOOTER_MENU_ITEMS from 'utils/links/footer-menu-items';
 
@@ -23,7 +23,9 @@ const Footer = () => {
       <FooterRight />
     </footer>
   );
-};`
+};`,
+linesInPrimary: [1, 3, 9],
+linesInSecondary: []
 },
 ];
 
