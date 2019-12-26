@@ -20,7 +20,6 @@ export default css.global`
     font-size: ${theme.typography.fontSize}px;
     font-family: ${theme.typography.fontFamily};
     font-weight: ${theme.typography.fontWeightRegular};
-    text-align: center;
   }
   p {
     font-size: 1em;
