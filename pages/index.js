@@ -1,88 +1,134 @@
-import React from 'react'
-import Head from 'next/head'
-import Nav from '../components/nav'
 
-const Home = () => (
-  <div>
-    <Head>
-      <title>Home</title>
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
+import Link from 'next/link';
 
-    <Nav />
+import Head from '../components/Head';
+import HeroSection from '../hoc/HeroSection';
+import CenterLayer from '../hoc/CenterLayer';
+import { pages } from '../utils/links';
+import { highlights } from '../utils/links';
+import theme from '../styles/theme';
+import { banners, imagePlaceHolder } from '../styles/images';
 
-    <div className="hero">
-      <h1 className="title">Welcome to Next.js!</h1>
-      <p className="description">
-        To get started, edit <code>pages/index.js</code> and save to reload.
-      </p>
-
-      <div className="row">
-        <a href="https://nextjs.org/docs" className="card">
-          <h3>Documentation &rarr;</h3>
-          <p>Learn more about Next.js in the documentation.</p>
-        </a>
-        <a href="https://nextjs.org/learn" className="card">
-          <h3>Next.js Learn &rarr;</h3>
-          <p>Learn about Next.js by following an interactive tutorial!</p>
-        </a>
-        <a
-          href="https://github.com/zeit/next.js/tree/master/examples"
-          className="card"
-        >
-          <h3>Examples &rarr;</h3>
-          <p>Find other example boilerplates on the Next.js GitHub.</p>
-        </a>
-      </div>
+const Description = () => (
+  <div className='description'>
+    <div className='summary'>
+      <h1>Adaptive Loading</h1>
+      <p>Differentially deliver fast, lighter experiences for users on slow networks & devices</p>
     </div>
-
+    <div className='highlights'>
+      <h4 className='uppercase'>HIGHLIGHTS</h4>
+      <ul>
+        <li>
+          <a href={highlights.gitHub.href}>{highlights.gitHub.title}</a>
+        </li>
+        <li>
+          <a href={highlights.chromeDevSummitTalk.href}>{highlights.chromeDevSummitTalk.title}</a>
+        </li>
+        <li>
+          <a href={highlights.deviceYearClass.href}>{highlights.deviceYearClass.title}</a>
+        </li>
+      </ul>
+    </div>
     <style jsx>{`
-      .hero {
-        width: 100%;
-        color: #333;
-      }
-      .title {
-        margin: 0;
-        width: 100%;
-        padding-top: 80px;
-        line-height: 1.15;
-        font-size: 48px;
-      }
-      .title,
       .description {
-        text-align: center;
-      }
-      .row {
-        max-width: 880px;
-        margin: 80px auto 40px;
         display: flex;
-        flex-direction: row;
-        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 48px;
       }
-      .card {
-        padding: 18px 18px 24px;
-        width: 220px;
-        text-align: left;
-        text-decoration: none;
-        color: #434343;
-        border: 1px solid #9b9b9b;
+      .description > div {
+        padding: 0 20px;
       }
-      .card:hover {
-        border-color: #067df7;
+      .description > .summary {
+        flex: 2;
       }
-      .card h3 {
-        margin: 0;
-        color: #067df7;
-        font-size: 18px;
+      .description > .highlights {
+        flex: 1;
       }
-      .card p {
-        margin: 0;
-        padding: 12px 0 0;
-        font-size: 13px;
-        color: #333;
+      .description > .highlights li {
+        line-height: 1.5;
+      }
+      h4 {
+        font-size: 14px;
+      }
+      a {
+        text-decoration: underline;
+        font-size: 20px;
+      }
+      a:visited {
+        color: #a6a6a6;
+      }
+      @media screen and (max-width: ${theme.breakpoints.md - 1}px) {
+        .highlights {
+          display: none;
+        }
       }
     `}</style>
   </div>
-)
+);
 
-export default Home
+const Illustration = () => (
+  <div className='illustration'>
+    <div className='factor-type'>
+      <Link href='/' as ='/'>
+        <picture>
+          <source srcSet={banners.factorType.svg} type='image/svg+xml' />
+          <source srcSet={banners.factorType.png} type='image/png' />
+          <img width='100%' src={imagePlaceHolder} alt={banners.factorType.alt} />
+        </picture>
+      </Link>
+    </div>
+    <div className='low-data'>
+      <Link href='/' as ='/'>
+        <picture>
+          <source srcSet={banners.lowData.webp} type='image/webp' />
+          <source srcSet={banners.lowData.jpg} type='image/jpeg' />
+          <img width='100%' src={imagePlaceHolder} alt={banners.lowData.alt} />
+        </picture>
+      </Link>
+    </div>
+    <style jsx>{`
+      .illustration {
+        display: flex;
+      }
+      .illustration > div {
+        padding: 1.25rem;
+      }
+      .illustration > .factor-type {
+        flex: 2;
+        cursor: pointer;
+      }
+      .illustration > .factor-type:hover {
+        ${theme.imageHoveringEffect}
+      }
+      .illustration > .factor-type > img {
+        border: 1px solid rgba(158,158,158,.3);
+      }
+      .illustration > .low-data {
+        flex: 1;
+        cursor: pointer;
+      }
+      .illustration > .low-data:hover {
+        ${theme.imageHoveringEffect}
+      }
+      @media screen and (max-width: ${theme.breakpoints.sm - 1}px) {
+        .illustration {
+          flex-direction: column;
+        }
+      }
+    `}</style>
+  </div>
+);
+
+const Home = () => (
+  <>
+    <Head title={pages.home.title} />
+    <HeroSection>
+      <CenterLayer>
+        <Description />
+        <Illustration />
+      </CenterLayer>
+    </HeroSection>
+  </>
+);
+
+export default Home;
