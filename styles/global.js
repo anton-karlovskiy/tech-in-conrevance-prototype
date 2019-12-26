@@ -47,7 +47,7 @@ export default css.global`
     margin: 0;
     margin-bottom: 4px;
   }
-  ul {
+  ul.no-bullet {
     list-style: none;
     margin: 0;
     padding: 0;

@@ -17,7 +17,7 @@ const Description = () => (
     </div>
     <div className='highlights'>
       <h4 className='uppercase'>HIGHLIGHTS</h4>
-      <ul>
+      <ul className='no-bullet'>
         { highlights.map(highlight => (
           <li key={highlight.title}>
             <a href={highlight.href}>{highlight.title}</a>

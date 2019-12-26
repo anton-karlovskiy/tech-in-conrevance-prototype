@@ -5,7 +5,7 @@ import theme from '../../../styles/theme';
 
 const NavigationList = () => (
   <nav>
-    <ul>
+    <ul className='no-bullet'>
       <NavitationListItem
           title={pages.home.title}
           href={pages.home.href}
