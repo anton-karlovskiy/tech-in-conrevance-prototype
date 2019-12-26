@@ -6,7 +6,11 @@ import theme from '../../../styles/theme';
 const NavigationList = () => (
   <nav>
     <ul>
-      { Object.entries(pages).map(([key, value]) => (
+      <NavitationListItem
+          title={pages.home.title}
+          href={pages.home.href}
+          as={pages.home.as} />
+      { Object.entries(pages.react).map(([key, value]) => (
         <NavitationListItem
           key={key}
           title={value.title}

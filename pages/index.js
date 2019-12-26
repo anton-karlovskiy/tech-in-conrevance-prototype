@@ -12,21 +12,17 @@ import { banners, imagePlaceHolder } from '../styles/images';
 const Description = () => (
   <div className='description'>
     <div className='summary'>
-      <h1>Adaptive Loading</h1>
-      <p>Differentially deliver fast, lighter experiences for users on slow networks & devices</p>
+      <h1>Conrevance</h1>
+      <p>Conrevance is short for continuous revoluation and advance.</p>
     </div>
     <div className='highlights'>
       <h4 className='uppercase'>HIGHLIGHTS</h4>
       <ul>
-        <li>
-          <a href={highlights.gitHub.href}>{highlights.gitHub.title}</a>
-        </li>
-        <li>
-          <a href={highlights.chromeDevSummitTalk.href}>{highlights.chromeDevSummitTalk.title}</a>
-        </li>
-        <li>
-          <a href={highlights.deviceYearClass.href}>{highlights.deviceYearClass.title}</a>
-        </li>
+        { highlights.map(highlight => (
+          <li key={highlight.title}>
+            <a href={highlight.href}>{highlight.title}</a>
+          </li>
+        )) }
       </ul>
     </div>
     <style jsx>{`
@@ -98,7 +94,7 @@ const Illustration = () => (
         cursor: pointer;
       }
       .illustration > .factor-type:hover {
-        ${theme.imageHoveringEffect}
+        ${theme.animation.imageHoveringEffect}
       }
       .illustration > .factor-type > img {
         border: 1px solid rgba(158,158,158,.3);
@@ -108,7 +104,7 @@ const Illustration = () => (
         cursor: pointer;
       }
       .illustration > .low-data:hover {
-        ${theme.imageHoveringEffect}
+        ${theme.animation.imageHoveringEffect}
       }
       @media screen and (max-width: ${theme.breakpoints.sm - 1}px) {
         .illustration {

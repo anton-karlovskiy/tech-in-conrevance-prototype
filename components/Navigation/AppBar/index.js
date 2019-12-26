@@ -2,7 +2,7 @@
 import Link from 'next/link';
 
 import NavigationList from '../NavigationList';
-import SvgIcon from '../../SvgIcon';
+import Logo from '../../Logo';
 import theme from '../../../styles/theme';
 import { pages } from '../../../utils/links';
 
@@ -12,7 +12,7 @@ const AppBar = () => (
       <div className='top-app-bar-row'>
         <div className='top-app-bar-section top-app-bar-section__start'>
           <Link href={pages.home.href} as={pages.home.as}>
-            <a><SvgIcon name='main' /></a>
+            <a><Logo width='40px' height='40px' /></a>
           </Link>
         </div>
         <div className='top-app-bar-section top-app-bar-section__end'>

@@ -5,37 +5,30 @@ const pages = {
     href: '/',
     as: '/'
   },
-  reactHooks: {
-    title: 'React Hooks',
-    href: '/react-hooks',
-    as: '/react-hooks'
-  },
-  demos: {
-    title: 'Demos',
-    href: '/demos',
-    as: '/demos'
-  },
-  resources: {
-    title: 'Resources',
-    href: '/resources',
-    as: '/resources'
+  react: {
+    codingStyle: {
+      title: 'React Coding Style',
+      href: '/react/coding-style',
+      as: '/react/coding-style'
+    },
+    bestPractices: {
+      title: 'React Best Practices',
+      href: '/react/best-practices',
+      as: '/react/best-practices'
+    }
   }
 };
 
-const highlights = {
-  gitHub: {
+const highlights = [
+  {
     title: 'GitHub',
-    href: 'https://github.com/GoogleChromeLabs/react-adaptive-hooks/'
+    href: 'https://github.com/anton-karlovskiy/tech-in-conrevance'
   },
-  chromeDevSummitTalk: {
+  {
     title: 'Chrome Dev Summit talk',
     href: 'https://www.youtube.com/watch?v=puUPpVrIRkc'
-  },
-  deviceYearClass: {
-    title: 'Device Year class',
-    href: 'https://engineering.fb.com/android/year-class-a-classification-system-for-android/'
   }
-};
+];
 
 export {
   pages,
